@@ -17,19 +17,19 @@ const float Factor = 1.25; // Constante del Factor de Lectura
 int lectura_1 = 0; //Guardar La lectura hecha por el sensor
 
 
-int pul_1 = 2;
-int pul_2 = 3;
-int valor =0;
-int valor_2 =0; 
+int pul_1 = 2;//al pin que va
+int pul_2 = 3;//al pin que va
+int valor =0;//nos ayuda a contener algun valor
+int valor_2 =0; //nos ayuda a contener algun valor
 
 
 void setup() {
   Serial.begin(9600); //Inicializa la comunicacion Serial
   pantallalcd.init();//se indica que la pantallalcd que en eso se iniciara
  pantallalcd.backlight();//se indica que la pantallalcd para su iluminaciÃ³n
- pinMode(pul_1, OUTPUT);
- pinMode(pul_2, OUTPUT);
-  pantallalcd.clear();
+ pinMode(pul_1, OUTPUT);//indica el pin
+ pinMode(pul_2, OUTPUT);//indica el pin
+  pantallalcd.clear();//que limpie 
   pantallalcd.setCursor(0,0);//QUE SE PONGA EN ESA POSICIÓN DE LA LCD 
   pantallalcd.print("   MEDICIONES  ");//que se imprima corriente:
   pantallalcd.setCursor(0,1);//QUE SE PONGA EN ESA POSICIÓN DE LA LCD 
@@ -41,16 +41,16 @@ void setup() {
 }
 
 void loop() {
-  if(valor == 250){
-    valor_2 = 0;
-    corriente();
+  if(valor == 250){//si ese igual al valor haga lo que esta adentro
+    valor_2 = 0;//que el valor sea 0 ahora 
+    corriente();//si ese igual al valor haga lo que esta adentro
   } 
 
 
 
   if(valor_2 == 150){
-    valor = 0;
-    voltaje();
+    valor = 0;//que el valor sea 0 ahora 
+    voltaje();//si ese igual al valor haga lo que esta adentro
   }
 
 }
@@ -81,11 +81,11 @@ void voltaje(){
 }
 
 void travis(){
-  valor = 250;
+  valor = 250;//que sea ese valor
 }
 
 void drake(){
-  valor_2 = 150;
+  valor_2 = 150;//que sea ese valor
 }
 
 
